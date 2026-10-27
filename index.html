@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Verification</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-mark">CV</div>
+    <div>
+      <h1>Certificate Verification</h1>
+      <p>Verify training and course certificates online</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="search-card">
+      <span class="eyebrow">CERTIFICATE PORTAL</span>
+      <h2>Verify a Certificate</h2>
+      <p>Enter a certificate ID, or open this page using a verification URL / QR code.</p>
+      <form id="verifyForm">
+        <label for="certificateId">Certificate ID</label>
+        <div class="search-row">
+          <input id="certificateId" name="certificateId" type="text"
+                 placeholder="e.g. AP-2026-001" autocomplete="off" required>
+          <button type="submit">Verify Certificate</button>
+        </div>
+        <small>Demo ID: <strong>AP-2026-001</strong></small>
+      </form>
+      <div id="message" class="message" role="status" aria-live="polite"></div>
+    </section>
+
+    <section id="result" class="result-card" hidden>
+      <div class="result-heading">
+        <div>
+          <span class="eyebrow">VERIFICATION RESULT</span>
+          <h2>Certificate Details</h2>
+        </div>
+        <span id="statusBadge" class="status-badge">Verified</span>
+      </div>
+
+      <div class="details-layout">
+        <div class="profile-panel">
+          <img id="profileImage" class="profile-image" src="" alt="Student profile">
+          <h3 id="studentName">Student Name</h3>
+          <p class="muted">Certificate holder</p>
+          <div class="detail-item"><span>CNIC</span><strong id="studentCnic"></strong></div>
+          <div class="detail-item"><span>Certificate ID</span><strong id="studentCertId"></strong></div>
+          <button id="copyLinkButton" class="secondary-button" type="button">Copy Verification Link</button>
+        </div>
+
+        <div class="certificate-panel">
+          <h3>Certificate Image</h3>
+          <img id="certificateImage" class="certificate-image" src="" alt="Certificate">
+          <div class="date-grid">
+            <div class="date-box"><span>Course Started</span><strong id="startDate"></strong></div>
+            <div class="date-box"><span>Course Ended</span><strong id="endDate"></strong></div>
+          </div>
+          <p class="notice">This result matches the demo record stored in this website.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="help-note">
+      <strong>Folder setup:</strong> certificates go in <code>certificates/</code>,
+      profile photos in <code>profiles/</code>, and records in <code>data/certificates.js</code>.
+      This is a demo; don't publish real CNIC information in front-end files.
+    </section>
+  </main>
+
+  <footer><p>© 2026 Certificate Verification Portal</p></footer>
+  <script src="data/certificates.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
